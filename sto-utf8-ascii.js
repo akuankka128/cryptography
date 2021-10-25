@@ -1,0 +1,3 @@
+// I might be a little bit obsessed with one-liners...
+var cipher = str => str.split('').reduce((a, c, i, o) => a + c + (i % 2 === 1 ? (i + 1 === o.length) ? '' : ':' : ''), '').split(':').reduce((a, c) => a + String.fromCharCode((c.charCodeAt() << 8) + c.charCodeAt(1)), '');
+var decode = str => str.split('').reduce((a, c) => a + String.fromCharCode(c.charCodeAt() >> 8, c.charCodeAt() & 0xff), '');
